@@ -47,20 +47,23 @@
     height: 100%;
     background: rgba(0, 0, 0, 0.5);
   }
-
-  &-window {
-    background: #fff;
-    overflow: hidden;
-  }
   @media only screen and (max-width: 767px) {
     &-content {
-      padding: 8vh 6vw;
+      padding: 8vh 4vw;
+    }
+    &-window {
+      background: #000;
+      overflow: hidden;
     }
   }
 
   @media only screen and (min-width: 768px), print {
     &-content {
-      padding: 18vh 40vw;
+      padding: 18vh 32vw;
+    }
+    &-window {
+      background: #fff;
+      overflow: hidden;
     }
   }
   
@@ -86,16 +89,26 @@
 
   .modal-window {
     opacity: 0;
-    transform: translateY(-20px);
+    transform: translateY(-60px);
   }
 }
 
 // モーダル
-p {
-  font-size: 5em;
-  font-family: 'Marcellus SC';
-  
+@media only screen and (max-width: 767px) {
+  p {
+    font-size: 5em;
+    font-family: 'Marcellus SC';
+    color: #fff;
+  }
 }
+@media only screen and (min-width: 768px), print {
+  p {
+    font-size: 5em;
+    font-family: 'Marcellus SC';
+    color: #000;
+  }
+}
+
 a {
 	text-decoration: none;
 	outline: none;
@@ -145,13 +158,28 @@ a {
 } 
 
 // ボタンの中の文字の位置
-span {
-	display: block;
-	padding: 15px 30px;
-	background: #fff;
-	z-index: 100;
-	position: relative;
-	transition: all .35s ease-in-out .35s;
+@media only screen and (max-width: 767px) {
+  span {
+    display: block;
+    padding: 2vh 4vw;
+    background: #fff;
+    z-index: 100;
+    position: relative;
+    transition: all .35s ease-in-out .35s;
+    text-align: center;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  span {
+    display: block;
+    padding: 2vh 2vw;
+    background: #fff;
+    z-index: 100;
+    position: relative;
+    transition: all .35s ease-in-out .35s;
+    text-align: center;
+  }
 }
 
 // アニメーション

@@ -204,15 +204,30 @@ html, body {
 	background: #fff;
 	color: #444;
 } 
-span {
-	display: block;
-	padding: 1.8vh 2vw;
-	background: #fff;
-	z-index: 100;
-	position: relative;
-  transition: all .35s ease-in-out .35s;
-  text-align: center;
+@media only screen and (max-width: 767px) {
+  span {
+    display: block;
+    padding: 2vh 4vw;
+    background: #fff;
+    z-index: 100;
+    position: relative;
+    transition: all .35s ease-in-out .35s;
+    text-align: center;
+  }
 }
+
+@media only screen and (min-width: 768px) {
+  span {
+    display: block;
+    padding: 2vh 2vw;
+    background: #fff;
+    z-index: 100;
+    position: relative;
+    transition: all .35s ease-in-out .35s;
+    text-align: center;
+  }
+}
+
 .button:hover span {
 	background: #333;
 	color: #fff;
