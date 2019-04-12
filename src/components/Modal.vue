@@ -49,7 +49,7 @@
   }
   @media only screen and (max-width: 767px) {
     &-content {
-      padding: 8vh 4vw;
+      padding: 6vh 4vw;
     }
     &-window {
       background: #000;
