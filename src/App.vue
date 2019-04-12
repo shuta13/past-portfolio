@@ -109,7 +109,7 @@ html, body {
 
 @media only screen and (max-width: 767px) {
   .name-logo {
-    width: 72vw;
+    width: 64vw;
 		height: auto;
   }
   .bg {
@@ -206,7 +206,7 @@ html, body {
 } 
 span {
 	display: block;
-	padding: 2vh 2.4vw;
+	padding: 1.8vh 2vw;
 	background: #fff;
 	z-index: 100;
 	position: relative;
