@@ -8,7 +8,6 @@
     </div>
     <div class="example-modal-window">
       <!-- <button type="checkbox" @click="openModal"></button> -->
-      
       <div class="light-button button-wrapper">
         <div class="button" @click="openModal">
           <span>
@@ -147,6 +146,8 @@ html, body {
 	background: #333;
 } */
 .button {
+  font-size: 2em;
+  font-family: 'Marcellus SC';
 	background: #fff;
 	border: none;
 	padding: 2px;

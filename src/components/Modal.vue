@@ -4,9 +4,23 @@
       <div class="modal-window">
         <div class="light-button button-wrapper">
           <div class="modal-content">
-            <p>hoge</p>
-            <p>foo</p>
-            <p>piyo</p>
+            <div id="link">
+              <div id="link-item">
+                <p>
+                  <a>work</a>
+                </p>
+              </div>
+              <div id="link-item">
+                <p>
+                  <a>gallery</a>
+                </p>
+              </div>
+              <div id="link-item">
+                <p>
+                  <a>contact</a>
+                </p>
+              </div>
+            </div>
           </div>
         <div @click="$emit('close')" class="button">
             <span>
@@ -41,8 +55,7 @@
   }
 
   &-content {
-    padding: 36vh 46vw
-    text-align :center;
+    padding: 12vh 42vw;
   }
 }
 
@@ -71,11 +84,26 @@
 }
 
 // モーダル
+p {
+  font-size: 5em;
+  font-family: 'Marcellus SC';
+}
+a {
+	text-decoration: none;
+	outline: none;
+}
+a:hover,
+a:focus {
+	outline: none;
+}
+
 .button-wrapper {
 	display: block;
   position: relative;
 }
 .button {
+  font-family: 'Marcellus SC';
+  font-size: 2em;
 	background: #fff;
 	border: none;
 	padding: 2px;
