@@ -10,11 +10,11 @@
                   <a>work</a>
                 </p>
               </div>
-              <div id="link-item">
+              <!-- <div id="link-item">
                 <p>
                   <a>gallery</a>
                 </p>
-              </div>
+              </div> -->
               <div id="link-item">
                 <p>
                   <a>contact</a>
@@ -50,13 +50,20 @@
 
   &-window {
     background: #fff;
-    border-radius: 4px;
     overflow: hidden;
   }
-
-  &-content {
-    padding: 12vh 42vw;
+  @media only screen and (max-width: 767px) {
+    &-content {
+      padding: 14vh 8vw;
+    }
   }
+
+  @media only screen and (min-width: 768px), print {
+    &-content {
+      padding: 18vh 40vw;
+    }
+  }
+  
 }
 
 // オーバーレイのトランジション
@@ -87,14 +94,14 @@
 p {
   font-size: 5em;
   font-family: 'Marcellus SC';
+  
 }
 a {
 	text-decoration: none;
 	outline: none;
 }
-a:hover,
-a:focus {
-	outline: none;
+.link-item {
+  vertical-align: middle;
 }
 
 .button-wrapper {

@@ -107,16 +107,38 @@ html, body {
   /* transform: perspective(800px); */
 }
 
+@media only screen and (max-width: 767px) {
+  .name-logo {
+    width: 80vw;
+		height: auto;
+  }
+  .bg {
+    width: 100vw;
+    height: auto;
+  }
+}
+
+@media only screen and (min-width: 768px), print {
+	.name-logo {
+		width: 48vw;
+		height: auto;
+  }
+  .bg {
+    width: 72vw;
+    height: auto;
+  }
+}
+
 .bg {
   position: absolute;
-  width: 1000px;
+  /* width: 1000px; */
   transform: translateZ(-200px);
 }
 
 .name-logo {
   position: absolute;
   opacity: 1;
-  width: 750px;
+  /* width: 750px; */
   transform: translateZ(100px);
 }
 
@@ -158,7 +180,7 @@ html, body {
 	transition: all .35s ease-in-out .35s;
   margin: 0 auto;
   width: 150px;
-  text-align: center;
+  /* text-align: center; */
 }
 .dark-button .button,
 .dark-button .button span {
@@ -184,11 +206,12 @@ html, body {
 } 
 span {
 	display: block;
-	padding: 15px 30px;
+	padding: 2vh 2.4vw;
 	background: #fff;
 	z-index: 100;
 	position: relative;
-	transition: all .35s ease-in-out .35s;
+  transition: all .35s ease-in-out .35s;
+  text-align: center;
 }
 .button:hover span {
 	background: #333;
