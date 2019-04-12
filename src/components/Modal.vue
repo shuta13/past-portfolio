@@ -59,7 +59,7 @@
 
   @media only screen and (min-width: 768px), print {
     &-content {
-      padding: 18vh 32vw;
+      padding: 18vh 40vw;
     }
     &-window {
       background: #fff;
