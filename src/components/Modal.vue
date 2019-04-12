@@ -59,7 +59,7 @@
 
   @media only screen and (min-width: 768px), print {
     &-content {
-      padding: 18vh 40vw;
+      padding: 14vh 38vw;
     }
     &-window {
       background: #fff;
@@ -103,7 +103,7 @@
 }
 @media only screen and (min-width: 768px), print {
   p {
-    font-size: 5em;
+    font-size: 6em;
     font-family: 'Marcellus SC';
     color: #000;
   }
