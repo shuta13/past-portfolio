@@ -54,7 +54,7 @@
   }
   @media only screen and (max-width: 767px) {
     &-content {
-      padding: 14vh 8vw;
+      padding: 12vh 8vw;
     }
   }
 

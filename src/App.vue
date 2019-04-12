@@ -109,11 +109,11 @@ html, body {
 
 @media only screen and (max-width: 767px) {
   .name-logo {
-    width: 80vw;
+    width: 72vw;
 		height: auto;
   }
   .bg {
-    width: 100vw;
+    width: 98vw;
     height: auto;
   }
 }
