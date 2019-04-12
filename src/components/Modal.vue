@@ -22,7 +22,7 @@
               </div>
             </div>
           </div>
-        <div @click="$emit('close')" class="button">
+          <div @click="$emit('close')" class="button">
             <span>
               Close
             </span>
@@ -98,7 +98,7 @@
   p {
     font-size: 5em;
     font-family: 'Marcellus SC';
-    color: #fff;
+    color: #DCDCDC;
   }
 }
 @media only screen and (min-width: 768px), print {
