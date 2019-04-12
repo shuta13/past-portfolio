@@ -109,37 +109,34 @@ html, body {
 
 @media only screen and (max-width: 767px) {
   .name-logo {
-    width: 64vw;
-		height: auto;
+    width: 72vw;
+    height: auto;
+    position: absolute;
+    opacity: 1;
+    transform: translateZ(-80px);
   }
   .bg {
-    width: 98vw;
+    width: 108vw;
     height: auto;
+    position: absolute;
+    transform: translateZ(-200px);
   }
 }
 
 @media only screen and (min-width: 768px), print {
 	.name-logo {
 		width: 48vw;
-		height: auto;
+    height: auto;
+    position: absolute;
+    opacity: 1;
+    transform: translateZ(100px);
   }
   .bg {
     width: 72vw;
     height: auto;
+    position: absolute;
+    transform: translateZ(-200px);
   }
-}
-
-.bg {
-  position: absolute;
-  /* width: 1000px; */
-  transform: translateZ(-200px);
-}
-
-.name-logo {
-  position: absolute;
-  opacity: 1;
-  /* width: 750px; */
-  transform: translateZ(100px);
 }
 
 @keyframes vertical {
