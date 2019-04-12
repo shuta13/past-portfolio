@@ -1,22 +1,44 @@
 <template>
   <div id="app">
-    <div id="hoge" @mousemove="onMouseMoved" @touchmove="onMouseMoved">
+    <div id="logo" @mousemove="onMouseMoved" @touchmove="onMouseMoved">
       <div class="container" v-bind:style="rotation">
         <img class="bg" src="./assets/back_image.png">
         <img class="name-logo" src="./assets/name.png">
       </div>
     </div>
+    <div class="example-modal-window">
+      <!-- <button type="checkbox" @click="openModal"></button> -->
+      
+      <div class="light-button button-wrapper">
+        <div class="button" @click="openModal">
+          <span>
+            Menu
+          </span>
+        </div>	
+      </div>
+
+      <!-- コンポーネント Modal -->
+      <Modal @close="closeModal" v-if="modal">
+        <!-- default スロットコンテンツ -->
+      </Modal>
+    </div>
   </div>
 </template>
 
 <script>
+import Modal from './components/Modal.vue'
+
 export default {
   name: 'app',
+  components: { Modal },
   data() {
     return {
       // rotatinoを動的に変化させる
       rotationX: 0.0,
       rotationY: 0.0,
+
+      modal: false,
+      message: '',
     }
   },
   computed: {
@@ -40,7 +62,23 @@ export default {
       this.rotationX = maxRotation * x;
       this.rotationY = -maxRotation * y;
     },
-  }
+    // モーダル部分
+    openModal() {
+      this.modal = true
+    },
+    closeModal() {
+      this.modal = false
+    },
+    doSend() {
+      if (this.message.length > 0) {
+        alert(this.message)
+        this.message = ''
+        this.closeModal()
+      } else {
+        alert('メッセージを入力してください')
+      }
+    }
+  },
 }
 </script>
 
@@ -49,7 +87,7 @@ html, body {
   height: 100vh;
 }
 
-#hoge {
+#logo {
   position: relative;
   width: 100vw;
   height: 100vh;
@@ -92,5 +130,100 @@ html, body {
   position: fixed;
   bottom: 0;
   padding: 3px;
+}
+
+.example-modal-window {
+  position: absolute;
+  top: 0;
+  display: block;
+  text-align: left;
+}
+.button-wrapper {
+	display: inline-block;
+	padding: 40px;
+}
+/* .dark-button,
+.dark-button-2 {
+	background: #333;
+} */
+.button {
+	background: #fff;
+	border: none;
+	padding: 2px;
+	cursor: pointer;
+	display: block;
+	position: relative;
+	overflow: hidden;
+	transition: all .35s ease-in-out .35s;
+  margin: 0 auto;
+  width: 150px;
+  text-align: center;
+}
+.dark-button .button,
+.dark-button .button span {
+	background: #333;
+	color: #fff;
+}
+.dark-button .button:after,
+.dark-button .button:before,
+.dark-button .button:hover span {
+	background: #fff;
+	color: #444;
+} 
+.dark-button-2 .button,
+.dark-button-2 .button span {
+	background: #333;
+	color: #fff;
+}
+.dark-button-2 .button:after,
+.dark-button-2 .button:before,
+.dark-button-2 .button:hover span {
+	background: #fff;
+	color: #444;
+} 
+span {
+	display: block;
+	padding: 15px 30px;
+	background: #fff;
+	z-index: 100;
+	position: relative;
+	transition: all .35s ease-in-out .35s;
+}
+.button:hover span {
+	background: #333;
+	color: #fff;
+	transition: all .35s ease-in-out .35s;
+}
+/* 右下のライン */
+.button:after {
+	bottom: -100%;
+	right: -100%;
+	content: "";
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	background: #333;
+	transition: all .35s ease-in-out .5s;
+}
+.button:hover:after {
+	right: 0;
+	bottom: 0;
+	transition: all ease-in-out .25s;
+}
+/* 左上のライン */
+.button:before {
+	top: -100%;
+	left: -100%;
+	content: "";
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	background: #333;
+	transition: all .35s ease-in-out .5s;
+}
+.button:hover:before {
+	left: 0;
+	top: 0;
+	transition: all ease-in-out .35s;
 }
 </style>
