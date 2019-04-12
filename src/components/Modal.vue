@@ -55,6 +55,7 @@
   @media only screen and (max-width: 767px) {
     &-content {
       padding: 8vh 6vw;
+      perspective (200px)
     }
   }
 
