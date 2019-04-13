@@ -160,10 +160,6 @@ html, body {
 	display: inline-block;
 	padding: 40px;
 }
-/* .dark-button,
-.dark-button-2 {
-	background: #333;
-} */
 .button {
   font-size: 2em;
   font-family: 'Marcellus SC';
@@ -177,7 +173,6 @@ html, body {
 	transition: all .35s ease-in-out .35s;
   margin: 0 auto;
   width: 150px;
-  /* text-align: center; */
 }
 .dark-button .button,
 .dark-button .button span {

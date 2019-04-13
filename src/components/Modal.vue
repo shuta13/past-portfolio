@@ -49,7 +49,7 @@
   }
   @media only screen and (max-width: 767px) {
     &-content {
-      padding: 6vh 4vw;
+      padding: 12vh 6vw;
     }
     &-window {
       background: #000;
@@ -96,7 +96,7 @@
 // モーダル
 @media only screen and (max-width: 767px) {
   p {
-    font-size: 5em;
+    font-size: 4em;
     font-family: 'Marcellus SC';
     color: #DCDCDC;
   }
