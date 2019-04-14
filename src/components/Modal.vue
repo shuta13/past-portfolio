@@ -115,7 +115,8 @@ export default {
     background: #000;
   }
   p:hover {
-    background: #DCDCDC;
+    color: #000;
+    background: #fff;
   }
 }
 @media only screen and (min-width: 768px), print { 
@@ -131,13 +132,16 @@ export default {
   p:hover {
     color: #fff;
     background: #000;
-    transition: color 2s;
-    transition: background 1.2s;
   }
 }
 
 p {
   text-align: center;
+}
+
+p:hover  {
+  transition: color 2s;
+  transition: background 1.2s;
 }
 
 .link-item {
