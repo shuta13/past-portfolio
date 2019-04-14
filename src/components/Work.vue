@@ -14,7 +14,7 @@
       <div class="wrapper-box">
         <div id="box" class=flex :style="windowSize">
           <div class="item">
-            <span>application</span>
+            <span>coding</span>
             <p>
               <ul>Developing and Deployed products</ul>
             </p>
