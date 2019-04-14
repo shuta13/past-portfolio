@@ -24,8 +24,6 @@ export default {
     return {
       width: window.innerWidth,
       height: window.innerHeight,
-
-      modal: false,
     }
   },
   computed: {
