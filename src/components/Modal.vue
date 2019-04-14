@@ -6,7 +6,7 @@
           <div class="modal-content">
             <div id="link">
               <div id="link-item">
-                <p @click="handleClickToWork">work</p>
+                <p @click="handleClickToWork" @mouseover:style="hoverEffect">work</p>
                 <p @click="handleClickToContact">contact</p>
               </div>
             </div>
@@ -31,6 +31,13 @@ export default {
     },
     handleClickToContact() {
       this.$router.push({ path: './contact' });
+    }
+  },
+  computed: {
+    hoverEffect() {
+      return {
+        background: `#DCDCDC;`
+      }
     }
   }
 }
@@ -62,7 +69,7 @@ export default {
 
   @media only screen and (min-width: 768px), print {
     &-content {
-      padding: 14vh 38vw;
+      padding: 14vh 36vw;
     }
     &-window {
       background: #fff;
@@ -99,21 +106,38 @@ export default {
 // モーダル(ベース)
 @media only screen and (max-width: 767px) {
   p {
+    width: 64vw; 
     text-decoration: none;
     outline: none;
     color: #fff;
     font-size: 4em;
     font-family: 'Marcellus SC';
+    background: #000;
+  }
+  p:hover {
+    background: #DCDCDC;
   }
 }
 @media only screen and (min-width: 768px), print { 
   p {
+    width: 24vw;
     text-decoration: none;
     outline: none;
     color: #000;
     font-size: 6em;
     font-family: 'Marcellus SC';
+    background: #fff;
   }
+  p:hover {
+    color: #fff;
+    background: #000;
+    transition: color 2s;
+    transition: background 1.2s;
+  }
+}
+
+p {
+  text-align: center;
 }
 
 .link-item {
