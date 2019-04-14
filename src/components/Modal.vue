@@ -58,6 +58,7 @@ export default {
     height: 100%;
     background: rgba(0, 0, 0, 0.5);
   }
+  // ざっくりレスポンシブ対応
   @media only screen and (max-width: 767px) {
     &-content {
       padding: 12vh 6vw;

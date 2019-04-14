@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <div id="logo" @mousemove="onMouseMoved" @touchmove="onMouseMoved">
-      <div class="container" v-bind:style="rotation">
+      <div class="container" :style="rotation">
         <img class="bg" src="../assets/back_image.png">
         <img class="name-logo" src="../assets/name.png">
       </div>
@@ -122,6 +122,7 @@ html, body {
     0% { transform:translateY(-10px); }
   100% { transform:translateY(  0px); }
 }
+
 .modal-appear {
   position: absolute;
   top: 0;
