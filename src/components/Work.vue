@@ -35,7 +35,7 @@
           <div class="item">
             <span>illustration</span>
             <p>
-              <ul>painting<br>vocaloid, scene</ul>
+              <ul>Painting<br>vocaloid, scene</ul>
               <img src="../assets/miku.jpg">
               <img src="../assets/cloud.jpg">
             </p>
@@ -97,15 +97,15 @@ export default {
 <style scoped>
 a {
   position: relative;
-  font-family: 'Courgette';
+  font-family: 'Tangerine';
   top: 0;
   text-decoration: none;
-  color: #aaa;
+  color: #777;
 }
 p {
   position: relative;
-  font-family: 'Courgette';
-  color: #ccc;
+  font-family: 'Tangerine';
+  color: #aaa;
 }
 span {
   color: #666;
@@ -124,8 +124,11 @@ img {
     display: flex;
     flex-direction: column;
   }
+  a {
+    font-size: 1.8em;
+  }
   p {
-    font-size: 1em;
+    font-size: 1.5em;
   }
   img {
     width: 100px;
@@ -138,7 +141,7 @@ img {
   .item {
     margin: 2vh auto;
     height: 56vh;
-    width: 68vw;
+    width: 72vw;
   }
   .item span {
     font-size: 1.8em; 
@@ -149,10 +152,10 @@ img {
     display: flex;
   }
   a {
-    font-size: 2em;
+    font-size: 3em;
   }
   p {
-    font-size: 2em;
+    font-size: 2.6em;
   }
   img {
     width: 160px;
