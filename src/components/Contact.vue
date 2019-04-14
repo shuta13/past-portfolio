@@ -11,8 +11,12 @@
       <Back @close="closeModal" v-if="modal"></Back>
     </div>
     <div id="container">
-      <a href="mailto:hollystr13@gmail.com">Mail</a>
-      <a href="https://twitter.com/did0es">Twitter</a>
+      <p>
+        <a href="mailto:hollystr13@gmail.com">mail</a>
+      </p>
+      <p>
+        <a href="https://twitter.com/did0es">twitter</a>
+      </p>
     </div>
   </div>
 </template>
@@ -79,20 +83,48 @@ export default {
 }
 @media only screen and (max-width: 768px) {
   a {
-    font-size: 3em;
+    font-size: 4em;
+  }
+  p {
+    width: 18ew;
+  }
+  a:hover {
+    color: #000;
+  }
+  p:hover {
+    background: #fff;
   }
 }
 @media only screen and (min-width: 767px) {
   a {
-    font-size: 5em;
+    font-size: 6em;
   }
+  p {
+    width: 20vw;
+  }
+  a:hover {
+    color: #fff;
+  }
+  p:hover {
+    background: #000;
+  }
+
 }
 a {
+  text-align: center;
   margin-top: 8vh;
   margin-bottom: 8vh;
   text-decoration: none;
   font-family: 'Marcellus SC';
   color: #000;
+}
+p {
+  text-align: center;
+  margin: 2em;
+}
+p:hover  {
+  transition: color 2s;
+  transition: background 1.2s;
 }
 
 /* ボタンのアニメーション */

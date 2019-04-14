@@ -36,7 +36,6 @@ export default {
   computed: {
     hoverEffect() {
       return {
-        background: `#DCDCDC;`
       }
     }
   }
