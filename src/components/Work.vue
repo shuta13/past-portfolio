@@ -97,14 +97,14 @@ export default {
 <style scoped>
 a {
   position: relative;
-  font-family: 'NotoSans';
+  font-family: 'Courgette';
   top: 0;
   text-decoration: none;
   color: #aaa;
 }
 p {
   position: relative;
-  font-family: 'NotoSans';
+  font-family: 'Courgette';
   color: #ccc;
 }
 span {
@@ -166,12 +166,6 @@ img {
   .item span {
     font-size: 3.2em; 
   }
-}
-
-#box {
-  top: 0;
-  position: relative;
-  text-align: center;
 }
 .work-item {
   font-family: 'Marcellus SC';
