@@ -44,6 +44,7 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
+// モーダル
 .modal {
   &.modal-overlay {
     display: flex;
@@ -66,7 +67,6 @@ export default {
       overflow: hidden;
     }
   }
-
   @media only screen and (min-width: 768px), print {
     &-content {
       padding: 14vh 36vw;
@@ -76,27 +76,21 @@ export default {
       overflow: hidden;
     }
   }
-  
 }
-
 // オーバーレイのトランジション
 .modal-enter-active, .modal-leave-active {
   transition: opacity 0.4s;
-
   // オーバーレイに包含されているモーダルウィンドウのトランジション
   .modal-window {
     transition: opacity 0.4s, transform 0.4s;
   }
 }
-
 // ディレイを付けるとモーダルウィンドウが消えた後にオーバーレイが消える
 .modal-leave-active {
   transition: opacity 0.6s ease 0.4s;
 }
-
 .modal-enter, .modal-leave-to {
   opacity: 0;
-
   .modal-window {
     opacity: 0;
     transform: translateY(-60px);
@@ -134,20 +128,25 @@ export default {
     background: #000;
   }
 }
-
 p {
   text-align: center;
 }
-
 p:hover  {
   transition: color 2s;
   transition: background 1.2s;
 }
-
 .link-item {
   vertical-align: middle;
 }
 
+// ボタン
+.button-wrapper {
+	display: inline-block;
+	padding: 40px;
+}
+.button {
+  margin: 0 auto;
+}
 .button-wrapper {
 	display: block;
   position: relative;
@@ -187,7 +186,6 @@ p:hover  {
 	background: #fff;
 	color: #444;
 } 
-
 // ボタンの中の文字の位置
 @media only screen and (max-width: 767px) {
   span {
@@ -212,8 +210,7 @@ p:hover  {
     text-align: center;
   }
 }
-
-// アニメーション
+// ボタンのアニメーション
 .button:hover span {
 	background: #333;
 	color: #fff;
