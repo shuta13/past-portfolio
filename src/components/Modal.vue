@@ -1,24 +1,13 @@
 <template>
   <transition name="modal" appear>
-    <div class="modal modal-overlay" @click.self="$emit('close')">
+    <div id="modal" class="modal modal-overlay" @click.self="$emit('close')">
       <div class="modal-window">
         <div class="light-button button-wrapper">
           <div class="modal-content">
             <div id="link">
               <div id="link-item">
-                <p>
-                  <a>work</a>
-                </p>
-              </div>
-              <!-- <div id="link-item">
-                <p>
-                  <a>gallery</a>
-                </p>
-              </div> -->
-              <div id="link-item">
-                <p>
-                  <a>contact</a>
-                </p>
+                <p @click="handleClickToWork">work</p>
+                <p @click="handleClickToContact">contact</p>
               </div>
             </div>
           </div>
@@ -32,6 +21,20 @@
     </div>
   </transition>
 </template>
+
+<script>
+export default {
+  name: 'modal',
+  methods: {
+    handleClickToWork() {
+      this.$router.push({ path: '/work' });
+    },
+    handleClickToContact() {
+      this.$router.push({ path: './contact' });
+    }
+  }
+}
+</script>
 
 <style lang="stylus" scoped>
 .modal {
@@ -93,26 +96,26 @@
   }
 }
 
-// モーダル
+// モーダル(ベース)
 @media only screen and (max-width: 767px) {
   p {
+    text-decoration: none;
+    outline: none;
+    color: #fff;
     font-size: 4em;
     font-family: 'Marcellus SC';
-    color: #DCDCDC;
   }
 }
-@media only screen and (min-width: 768px), print {
+@media only screen and (min-width: 768px), print { 
   p {
+    text-decoration: none;
+    outline: none;
+    color: #000;
     font-size: 6em;
     font-family: 'Marcellus SC';
-    color: #000;
   }
 }
 
-a {
-	text-decoration: none;
-	outline: none;
-}
 .link-item {
   vertical-align: middle;
 }
