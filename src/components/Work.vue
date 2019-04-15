@@ -28,8 +28,8 @@
             <span>art</span>
             <p>
               <ul>Creative coding<br>by Processing</ul>
-              <img src="../assets/frame-0725.png">
-              <img src="../assets/frame-0006.png">
+              <img src="../assets/frame-0725.jpg">
+              <img src="../assets/frame-0006.jpg">
             </p>
           </div>
           <div class="item">
