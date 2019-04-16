@@ -229,6 +229,6 @@ html, body {
 .button:hover:before {
 	left: 0;
 	top: 0;
-	transition: all ease-in-out .35s;
+	transition: all ease-in-out .25s;
 }
 </style>
