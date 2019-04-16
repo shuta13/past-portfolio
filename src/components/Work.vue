@@ -137,8 +137,8 @@ img {
     font-size: 1em;
   }
   img {
-    width: 100px;
-    height: 100px;
+    width: 90px;
+    height: 90px;
   }
   .photo-logo {
     width: 120px;
