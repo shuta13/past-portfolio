@@ -16,26 +16,28 @@
           <div class="item">
             <span>coding</span>
             <p>
-              <ul>Developing and Deployed products</ul>
+              Developing and Deployed products
             </p>
             <a href="https://github.com/shuta13">GitHub</a>
             <p>
-              <ul>Deployed Products</ul>
+              Deployed Products
             </p>
             <a href="https://stable-study.herokuapp.com">stable-study</a>
           </div>
           <div class="item">
             <span>art</span>
             <p>
-              <ul>Creative coding<br>by Processing</ul>
+              Creative coding by Processing
               <img src="../assets/frame-0725.jpg">
               <img src="../assets/frame-0006.jpg">
+              Logo Design by Abobe Photoshop
+              <img class="photo-logo" src="../assets/addict.jpg">
             </p>
           </div>
           <div class="item">
             <span>illustration</span>
             <p>
-              <ul>Painting<br>vocaloid, scene</ul>
+              Illustration of vocaloid, scene
               <img src="../assets/miku.jpg">
               <img src="../assets/cloud.jpg">
             </p>
@@ -44,7 +46,7 @@
           <div class="item">
             <span>music</span>
             <p>
-              <ul>EDM, Pops</ul>
+              EDM, Pops
             </p>
             <iframe width="360" height="240" src="https://www.youtube.com/embed/3iXUMObwmCU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             <a href="https://soundcloud.com/user-858183512">Soundcloud</a><br>
@@ -134,6 +136,10 @@ img {
     width: 100px;
     height: 100px;
   }
+  .photo-logo {
+    width: 120px;
+    height: 90px;
+  }
   iframe {
     width: 200px;
     height: 120px;
@@ -160,6 +166,10 @@ img {
   img {
     width: 160px;
     height: 160px;
+  }
+  .photo-logo {
+    width: 180px;
+    height: 120px;
   }
   .item {
     margin: 2vh auto;
