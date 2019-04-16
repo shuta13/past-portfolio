@@ -30,7 +30,7 @@
               Creative coding by Processing
               <img src="../assets/frame-0725.jpg">
               <img src="../assets/frame-0006.jpg"><br>
-              Logo Design by Abobe Photoshop
+              Logo Design by Abobe Photoshop<br>
               <img class="photo-logo" src="../assets/addict.jpg">
             </p>
           </div>
@@ -50,7 +50,7 @@
             </p>
             <iframe scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/568506840&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
             <a href="https://soundcloud.com/user-858183512">Soundcloud</a><br>
-            <a class="piapro-song" href="https://piapro.jp/t/IA0R">Supernova (Applied Magical Mirai 2019)</a><br>
+            <a class="piapro-song" href="https://piapro.jp/t/IA0R">Supernova<br>(Applied Magical Mirai 2019)</a><br>
             <a href="https://piapro.jp/did0es">Piapro</a>
           </div>
         </div>
@@ -107,6 +107,7 @@ a {
 }
 .piapro-song {
   color: #66CCCC;
+  font-size: 2vw;
 }
 p {
   position: relative;
@@ -117,7 +118,7 @@ span {
   color: #666;
 }
 img {
-  margin: 2px;
+  margin: 4px;
 }
 .flex{
     display: -webkit-flex;
@@ -131,10 +132,10 @@ img {
     flex-direction: column;
   }
   a {
-    font-size: 1.8em;
+    font-size: 1.8vw;
   }
   .piapro-song {
-    font-size: 1em;
+    font-size: 1vw;
   }
   img {
     width: auto;
@@ -145,8 +146,8 @@ img {
     height: 90px;
   }
   iframe {
-    width: 200px;
-    height: 120px;
+    width: 80%;
+    height: 40%;
   }
   .item {
     margin: 2vh auto;
@@ -154,7 +155,7 @@ img {
     width: 72vw;
   }
   .item span {
-    font-size: 1.8em; 
+    font-size: 2.8vw; 
   }
 }
 @media only screen and (min-width: 768px), print {
@@ -162,10 +163,10 @@ img {
     display: flex;
   }
   a {
-    font-size: 3em;
+    font-size: 2.4vw;
   }
   p {
-    font-size: 2.6em;
+    font-size: 2.6vw;
   }
   img {
     width: 40%
@@ -183,7 +184,7 @@ img {
     width: 22vw;
   }
   .item span {
-    font-size: 3.2em; 
+    font-size: 3.2vw; 
   }
 }
 .work-item {
