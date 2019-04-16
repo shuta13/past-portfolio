@@ -50,6 +50,7 @@
             </p>
             <iframe scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/568506840&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
             <a href="https://soundcloud.com/user-858183512">Soundcloud</a><br>
+            <a class="piapro-song" href="https://piapro.jp/t/IA0R">Supernova (Applied Magical Mirai 2019)</a><br>
             <a href="https://piapro.jp/did0es">Piapro</a>
           </div>
         </div>
@@ -102,7 +103,10 @@ a {
   font-family: 'Tangerine';
   top: 0;
   text-decoration: none;
-  color: #777;
+  color: #6666cc;
+}
+.piapro-song {
+  color: #66CCCC;
 }
 p {
   position: relative;
@@ -129,8 +133,8 @@ img {
   a {
     font-size: 1.8em;
   }
-  p {
-    font-size: 1.5em;
+  .piapro-song {
+    font-size: 1em;
   }
   img {
     width: 100px;
