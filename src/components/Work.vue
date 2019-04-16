@@ -29,7 +29,7 @@
             <p>
               Creative coding by Processing
               <img src="../assets/frame-0725.jpg">
-              <img src="../assets/frame-0006.jpg">
+              <img src="../assets/frame-0006.jpg"><br>
               Logo Design by Abobe Photoshop
               <img class="photo-logo" src="../assets/addict.jpg">
             </p>
@@ -137,7 +137,7 @@ img {
     font-size: 1em;
   }
   img {
-    width: 90px;
+    width: auto;
     height: 90px;
   }
   .photo-logo {
@@ -168,12 +168,14 @@ img {
     font-size: 2.6em;
   }
   img {
-    width: 160px;
-    height: 160px;
+    width: 40%
+  }
+  iframe {
+    width: 80%;
+    height: 30%
   }
   .photo-logo {
-    width: 180px;
-    height: 120px;
+    width: 50%;
   }
   .item {
     margin: 2vh auto;

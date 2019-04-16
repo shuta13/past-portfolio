@@ -69,7 +69,8 @@ export default {
 
 <style scoped>
 html, body {
-  height: 100vh;
+  height: 100%;
+  width: 100%;
 }
 #logo {
   position: relative;
