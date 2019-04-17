@@ -88,10 +88,6 @@ export default {
 </script>
 
 <style scoped>
-html, body {
-  height: 100%;
-  width: 100%;
-}
 #logo {
   position: relative;
   width: 100%;

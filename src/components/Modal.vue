@@ -112,6 +112,11 @@ export default {
     color: #000;
     background: #fff;
   }
+  .button {
+    vertical-align: middle;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 @media only screen and (min-width: 768px), print { 
   p {
@@ -126,6 +131,9 @@ export default {
   p:hover {
     color: #fff;
     background: #000;
+  }
+  .button {
+    margin: 0 auto;
   }
 }
 p {
@@ -144,9 +152,7 @@ p:hover  {
 	display: inline-block;
 	padding: 40px;
 }
-.button {
-  margin: 0 auto;
-}
+
 .button-wrapper {
 	display: block;
   position: relative;

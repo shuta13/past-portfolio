@@ -2,9 +2,9 @@
   <div id="work">
     <div class="modal-appear">
       <div class="light-button button-wrapper">
-        <div class="button flex" @click="handleClickToHome">
+        <div class="button" @click="handleClickToHome">
           <span>
-            Back
+            back
           </span>
         </div>	
       </div>
@@ -12,7 +12,7 @@
     </div>
     <div class="wrapper">
       <div class="wrapper-box">
-        <div id="box" class=flex :style="windowSize">
+        <div id="box">
           <div class="item">
             <span>coding</span>
             <p>
@@ -27,7 +27,7 @@
           <div class="item">
             <span>art</span>
             <p>
-              Creative coding by Processing
+              Creative coding by Processing<br>
               <img src="../assets/frame-0725.jpg">
               <img src="../assets/frame-0006.jpg"><br>
               Logo Design by Abobe Photoshop<br>
@@ -37,7 +37,7 @@
           <div class="item">
             <span>illustration</span>
             <p>
-              Illustration of vocaloid, scene
+              Illustration of vocaloid, scene<br>
               <img src="../assets/miku.jpg">
               <img src="../assets/cloud.jpg">
             </p>
@@ -48,7 +48,9 @@
             <p>
               EDM, Pops
             </p>
-            <iframe scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/568506840&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
+            <iframe scrolling="no" frameborder="no" allow="autoplay" 
+              src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/568506840&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true">
+            </iframe><br>
             <a href="https://soundcloud.com/user-858183512">Soundcloud</a><br>
             <a class="piapro-song" href="https://piapro.jp/t/IA0R">Supernova<br>(Applied Magical Mirai 2019)</a><br>
             <a href="https://piapro.jp/did0es">Piapro</a>
@@ -60,44 +62,38 @@
 </template>
 
 <script>
+import { TweenMax } from 'greensock'
+
 export default {
   name: 'work',
-  data: function () {
-    return {
-      width: window.innerWidth,
-      height: window.innerHeight,
-    }
-  },
-  computed: {
-    windowSize() {
-      return {
-        width: `${this.width}px`,
-        height: `${this.height}px`
-      }
-    }
-  },
   methods: {
-    handleResize: function() {
-      // resizeのたびにこいつが発火するので、ここでやりたいことをやる
-
-      this.width = window.innerWidth;
-      this.height = window.innerHeight;
-    },
     handleClickToHome() {
       this.$router.push({ path: '/' });
     },
   },
-  mounted: function () {
-    window.addEventListener('resize', this.handleResize)
-  },
-  beforeDestroy: function () {
-    window.removeEventListener('resize', this.handleResize)
+  created: function() {
+    TweenMax.set("body", {overflowY:'scroll'});
+    var scrollSpeed = 0.2;
+    var scrollHeight = 10000;
+    TweenMax.set("body", {height:scrollHeight, overflowY:'scroll'});
+    document.addEventListener("scroll", function () {
+      const pixels = document.documentElement.scrollTop || document.body.scrollTop;
+      TweenMax.to(".item",1,{x:-3.5 * pixels})
+      console.log(pixels);
+    }, false);
   }
 }
 </script>
 
 
 <style scoped>
+html, body {
+  width: 100%;
+  display: none;
+}
+.item::-webkit-scrollbar {
+  display: none;
+}
 a {
   position: relative;
   font-family: 'Tangerine';
@@ -110,6 +106,7 @@ a {
   font-size: 2vw;
 }
 p {
+  top: 0;
   position: relative;
   font-family: 'Tangerine';
   color: #aaa;
@@ -132,13 +129,15 @@ img {
     flex-direction: column;
   }
   a {
-    font-size: 200%;
+    font-size: 360%;
   }
   p {
-    font-size: 200%;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 360%;
   }
   .piapro-song {
-    font-size: 1vw;
+    font-size: 240%;
   }
   img {
     width: auto;
@@ -153,42 +152,92 @@ img {
     height: 40%;
   }
   .item {
+    overflow: scroll;
     margin: 2vh auto;
-    height: 72vh;
+    height: 56vh;
     width: 72vw;
-    /* overflow: scroll; */
   }
   .item span {
-    font-size: 240%; 
+    font-size: 300%; 
+  }
+  span {
+    display: block;
+    padding: 2vh 4vw;
+    background: #fff;
+    z-index: 100;
+    position: relative;
+    transition: all .35s ease-in-out .35s;
+    text-align: center;
+  }
+  .button {
+    vertical-align: middle;
+    position: relative;
   }
 }
 @media only screen and (min-width: 768px), print {
-	.flex{
-    display: flex;
-  }
   a {
-    font-size: 2.4vw;
+    font-size: 420%;
   }
   p {
-    font-size: 2.6vw;
+    font-size: 400%;
   }
   img {
     width: 40%
   }
   iframe {
+    top: 0;
     width: 80%;
-    height: 30%
+    height: 40%
   }
   .photo-logo {
-    width: 50%;
+    width: 40%;
   }
   .item {
-    margin: 2vh auto;
-    height: 64vh;
-    width: 22vw;
+    vertical-align: middle;
+    display: inline-block;
+    overflow: scroll;
+    height: 240%;
+    width: 42vw;
+    margin-left: 1.2%;
+    margin-right: 1.2%;
   }
   .item span {
-    font-size: 3.2vw; 
+    font-size: 400%;
+  }
+  /* #box {
+  /* overflow-x: auto;
+    width: 5000px;
+    height: 300px;
+    left: 5000px;
+  } */
+  span {
+    display: block;
+    padding: 2vh 1.8vw;
+    background: #fff;
+    z-index: 100;
+    position: relative;
+    transition: all .35s ease-in-out .35s;
+    text-align: center;
+    font-size: 140%;
+  }
+  .button {
+    position: relative;
+  }
+  .modal-appear {
+    /* height: 0; */
+  }
+  .wrapper-box {
+    position:fixed;
+    height:300px;
+    top:60px;
+    left:-5000px;
+    margin-top:10vh;
+  }
+  #box {
+    position: absolute;
+    width: 4000px;
+    height: 300px;
+    left: 5000px;
   }
 }
 .work-item {
@@ -204,12 +253,13 @@ img {
 .item span {
   text-align: center;
   font-family: 'Marcellus SC';
-  color: #BBB;
+  color: #888;
 }
+
 /* ボタンのアニメーション */
 .button-wrapper {
 	display: inline-block;
-	padding: 40px;
+	/* padding: 40px; */
 }
 .button {
   font-size: 2em;
@@ -223,7 +273,7 @@ img {
 	transition: all .35s ease-in-out .35s;
   margin: 0 auto;
   width: 150px;
-  position: relative;
+  
 }
 .dark-button .button,
 .dark-button .button span {
@@ -247,29 +297,6 @@ img {
 	background: #fff;
 	color: #444;
 } 
-@media only screen and (max-width: 767px) {
-  span {
-    display: block;
-    padding: 2vh 4vw;
-    background: #fff;
-    z-index: 100;
-    position: relative;
-    transition: all .35s ease-in-out .35s;
-    text-align: center;
-  }
-}
-
-@media only screen and (min-width: 768px) {
-  span {
-    display: block;
-    padding: 2vh 2vw;
-    background: #fff;
-    z-index: 100;
-    position: relative;
-    transition: all .35s ease-in-out .35s;
-    text-align: center;
-  }
-}
 
 .button:hover span {
 	background: #333;
