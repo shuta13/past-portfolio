@@ -12,10 +12,10 @@
     </div>
     <div id="container">
       <p>
-        <a href="mailto:hollystr13@gmail.com">mail</a>
+        <a class="item01" href="mailto:hollystr13@gmail.com">mail</a>
       </p>
       <p>
-        <a href="https://twitter.com/did0es">twitter</a>
+        <a class="item02" href="https://www.facebook.com/profile.php?id=100028982675881">facebook</a>
       </p>
     </div>
   </div>
@@ -82,10 +82,11 @@ export default {
   align-items: center;
 }
 @media only screen and (max-width: 768px) {
-  a {
-    font-size: 4em;
+  .item01 {
+    font-size: 3em;
   }
-  p {
+  .item02 {
+    font-size: 3em;
     width: 18ew;
   }
   a:hover {
@@ -96,10 +97,11 @@ export default {
   }
 }
 @media only screen and (min-width: 767px) {
-  a {
-    font-size: 6em;
+  .item01 {
+    font-size: 5em;
   }
-  p {
+  .item02 {
+    font-size: 5em;
     width: 20vw;
   }
   a:hover {
