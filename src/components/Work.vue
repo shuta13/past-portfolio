@@ -48,9 +48,10 @@
             <p>
               EDM, Pops
             </p>
-            <iframe scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/568506840&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
+            <iframe scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/607702572&color=%23a0879a&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
+            <p></p>
             <a href="https://soundcloud.com/user-858183512">Soundcloud</a><br>
-            <a class="piapro-song" href="https://piapro.jp/t/IA0R">Supernova<br>(Applied Magical Mirai 2019)</a><br>
+            <p></p>
             <a href="https://piapro.jp/did0es">Piapro</a>
           </div>
         </div>
