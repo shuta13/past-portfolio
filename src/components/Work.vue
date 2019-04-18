@@ -155,7 +155,7 @@ img {
   }
   .item {
     margin: 2vh auto;
-    height: 76vh;
+    height: 78vh;
     width: 72vw;
     /* overflow: scroll; */
   }
