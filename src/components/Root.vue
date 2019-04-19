@@ -158,7 +158,7 @@ export default {
   .loader {
     position: absolute;
     margin-left: 24vw;
-    margin-top: 36vh;
+    margin-top: 30vh;
     display: flex;
     justify-content: center;
     align-items: center;

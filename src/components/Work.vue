@@ -259,7 +259,7 @@ img {
   .loader {
     position: absolute;
     margin-left: 42vw;
-    margin-top: 36vh;
+    margin-top: 30vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -336,7 +336,7 @@ img {
   }
   .button-wrapper {
     position: absolute;
-    margin-left: 44vw;
+    margin-left: 40vw;
     margin-top: 2vh;
   }
 }
