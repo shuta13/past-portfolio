@@ -71,7 +71,7 @@ export default {
   },
   data: function () {
     return {
-      width: window.innerWidth,
+      width: window.innerWidth - (window.innerWidth/22),
       height: window.innerHeight - (window.innerHeight/3),
       isLoading: true,
       motionContinue: true,
@@ -233,7 +233,7 @@ img {
   .item {
     margin: 2vh auto;
     height: 64vh;
-    width: 22vw;
+    width: 24vw;
   }
   .item span {
     font-size: 3.2vw; 
@@ -345,7 +345,7 @@ img {
 
 @media only screen and (min-width: 768px) {
   span {
-    color: #000;
+    color: #333;
     background: #000;
     display: block;
     padding: 2vh 2vw;
@@ -370,7 +370,7 @@ img {
 	width: 100%;
 	height: 100%;
 	position: absolute;
-	background: #000;
+	background: #333;
 	transition: all .35s ease-in-out .3s;
 }
 .button:hover:after {
