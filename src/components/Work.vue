@@ -10,6 +10,7 @@
       </div>
       <Back @close="closeModal" v-if="modal"></Back>
     </div>
+    <dot-loader class="loader" :loading="isLoading" :color="color" :size="size"></dot-loader>
     <div class="wrapper">
       <div class="wrapper-box">
         <div id="box" class=flex :style="windowSize">
@@ -48,7 +49,7 @@
             <p>
               EDM, Pops
             </p>
-            <iframe scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/607702572&color=%23a0879a&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
+            <iframe @load="loaded" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/607702572&color=%23a0879a&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
             <p></p>
             <a href="https://soundcloud.com/user-858183512">Soundcloud</a><br>
             <p></p>
@@ -61,12 +62,22 @@
 </template>
 
 <script>
+import DotLoader from 'vue-spinner/src/DotLoader';
+import { setTimeout } from 'timers';
+
 export default {
   name: 'work',
+  components: {
+    DotLoader
+  },
   data: function () {
     return {
       width: window.innerWidth,
       height: window.innerHeight,
+      isLoading: true,
+      motionEnded: false,
+      color: `#000000`,
+      size: `200px`
     }
   },
   computed: {
@@ -87,6 +98,12 @@ export default {
     handleClickToHome() {
       this.$router.push({ path: '/' });
     },
+    loaded() {
+      setTimeout(() => {
+        this.isLoading = !this.isLoading;
+        // this.motionEnded = !this.motionEnded;
+      }, 2000)
+    }
   },
   mounted: function () {
     window.addEventListener('resize', this.handleResize)
@@ -190,6 +207,14 @@ img {
   }
   .item span {
     font-size: 3.2vw; 
+  }
+  .loader {
+    position: absolute;
+    margin-left: 42vw;
+    margin-top: 28vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }
 .work-item {
