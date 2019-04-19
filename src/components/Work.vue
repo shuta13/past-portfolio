@@ -11,9 +11,10 @@
       <Back @close="closeModal" v-if="modal"></Back>
     </div>
     <dot-loader class="loader" :loading="isLoading" :color="color" :size="size"></dot-loader>
+    <div class="blind" v-if="motionContinue"></div>
     <div class="wrapper">
       <div class="wrapper-box">
-        <div id="box" class=flex :style="windowSize">
+        <div class="flex box" :style="windowSize">
           <div class="item">
             <span>coding</span>
             <p>
@@ -52,8 +53,6 @@
             <iframe @load="loaded" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/607702572&color=%23a0879a&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
             <p></p>
             <a href="https://soundcloud.com/user-858183512">Soundcloud</a><br>
-            <p></p>
-            <a href="https://piapro.jp/did0es">Piapro</a>
           </div>
         </div>
       </div>
@@ -73,9 +72,9 @@ export default {
   data: function () {
     return {
       width: window.innerWidth,
-      height: window.innerHeight,
+      height: window.innerHeight - (window.innerHeight/3),
       isLoading: true,
-      motionEnded: false,
+      motionContinue: true,
       color: `#000000`,
       size: `200px`
     }
@@ -101,8 +100,8 @@ export default {
     loaded() {
       setTimeout(() => {
         this.isLoading = !this.isLoading;
-        // this.motionEnded = !this.motionEnded;
-      }, 2000)
+        this.motionContinue = !this.motionContinue;
+      }, 3000)
     }
   },
   mounted: function () {
@@ -166,6 +165,10 @@ img {
     width: 120px;
     height: 90px;
   }
+  .wrapper {
+    position: relative;
+    margin-top: 8vh;
+  }
   iframe {
     width: 80%;
     height: 40%;
@@ -178,6 +181,33 @@ img {
   }
   .item span {
     font-size: 240%; 
+  }
+  /* ロード時に要素を隠す */
+  .blind {
+    position: absolute;
+    background-color: rgb(255, 255, 255);
+    width: 100vw;
+    height: 104vh;
+    z-index: 200;
+  }
+  /* 要素の調整 */
+  .wrapper,
+  .modal-appear {
+    position: absolute;
+    z-index: 1;
+  }
+  .wrapper {
+    margin-top: 16vh 
+  }
+  /* ローディングのアニメーション */
+  .loader {
+    position: absolute;
+    margin-left: 24vw;
+    margin-top: 36vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 300;
   }
 }
 @media only screen and (min-width: 768px), print {
@@ -208,13 +238,32 @@ img {
   .item span {
     font-size: 3.2vw; 
   }
+  /* ロード時に要素を隠す */
+  .blind {
+    position: absolute;
+    background-color: rgb(255, 255, 255);
+    width: 100vw;
+    height: 100vh;
+    z-index: 200;
+  }
+  /* 要素の調整 */
+  .wrapper,
+  .modal-appear {
+    position: absolute;
+    z-index: 1;
+  }
+  .wrapper {
+    margin-top: 16vh 
+  }
+  /* ローディングのアニメーション */
   .loader {
     position: absolute;
     margin-left: 42vw;
-    margin-top: 28vh;
+    margin-top: 36vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: 300;
   }
 }
 .work-item {
@@ -234,8 +283,10 @@ img {
 }
 /* ボタンのアニメーション */
 .button-wrapper {
+  position: relative;
+  z-index: 1;
 	display: inline-block;
-	padding: 40px;
+	/* padding: 20px; */
 }
 .button {
   font-size: 2em;
@@ -264,14 +315,14 @@ img {
 } 
 .dark-button-2 .button,
 .dark-button-2 .button span {
-	background: #333;
+	background: #000;
 	color: #fff;
 }
 .dark-button-2 .button:after,
 .dark-button-2 .button:before,
 .dark-button-2 .button:hover span {
 	background: #fff;
-	color: #444;
+	color: #000;
 } 
 @media only screen and (max-width: 767px) {
   span {
@@ -283,10 +334,17 @@ img {
     transition: all .35s ease-in-out .35s;
     text-align: center;
   }
+  .button-wrapper {
+    position: absolute;
+    margin-left: 44vw;
+    margin-top: 2vh;
+  }
 }
 
 @media only screen and (min-width: 768px) {
   span {
+    color: #000;
+    background: #000;
     display: block;
     padding: 2vh 2vw;
     background: #fff;
@@ -298,7 +356,7 @@ img {
 }
 
 .button:hover span {
-	background: #333;
+	background: #000;
 	color: #fff;
 	transition: all .35s ease-in-out .35s;
 }
@@ -310,7 +368,7 @@ img {
 	width: 100%;
 	height: 100%;
 	position: absolute;
-	background: #333;
+	background: #000;
 	transition: all .35s ease-in-out .3s;
 }
 .button:hover:after {
@@ -326,7 +384,7 @@ img {
 	width: 100%;
 	height: 100%;
 	position: absolute;
-	background: #333;
+	background: #000;
 	transition: all .35s ease-in-out .3s;
 }
 .button:hover:before {

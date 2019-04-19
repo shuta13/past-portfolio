@@ -1,5 +1,7 @@
 <template>
   <div id='contact'>
+    <dot-loader class="loader" :loading="isLoading" :color="color" :size="size"></dot-loader>
+    <div class="blind" v-if="motionContinue"></div>
     <div class="modal-appear">
       <div class="light-button button-wrapper">
         <div class="button" @click="handleClickToHome">
@@ -10,6 +12,7 @@
       </div>
       <Back @close="closeModal" v-if="modal"></Back>
     </div>
+    <img @load="loaded" src="https://www.w3schools.com/w3css/img_lights.jpg" style="opacity: 0;">
     <div id="container">
       <p>
         <a class="item01" href="mailto:hollystr13@gmail.com">mail</a>
@@ -22,12 +25,21 @@
 </template>
 
 <script>
+import DotLoader from 'vue-spinner/src/DotLoader';
+import { setTimeout } from 'timers';
+
 export default {
   name: 'contact',
+  components: { DotLoader },
   data: function () {
     return {
       width: window.innerWidth,
       height: window.innerHeight,
+
+      isLoading: true,
+      motionContinue: true,
+      color: `#000000`,
+      size: `200px`
     }
   },
   computed: {
@@ -54,6 +66,12 @@ export default {
     },
     closeModal() {
       this.modal = false
+    },
+    loaded() {
+      setTimeout(() => {
+        this.isLoading = !this.isLoading;
+        this.motionContinue = !this.motionContinue;
+      }, 1800)
     }
   },
   mounted: function () {
@@ -74,6 +92,7 @@ export default {
   display: block;
 }
 #container {
+  height: 72vh;
   padding: 6vh;
   flex-direction: column;
   flex-wrap: wrap;
@@ -95,13 +114,40 @@ export default {
   p:hover {
     background: #fff;
   }
+  /* ロード時に要素を隠す */
+  .blind {
+    position: absolute;
+    background-color: rgb(255, 255, 255);
+    width: 100vw;
+    height: 100vh;
+    z-index: 200;
+  }
+  /* 要素の調整 */
+  .wrapper,
+  .modal-appear {
+    position: absolute;
+    z-index: 1;
+  }
+  .wrapper {
+    margin-top: 16vh 
+  }
+  /* ローディングのアニメーション */
+  .loader {
+    position: absolute;
+    margin-left: 24vw;
+    margin-top: 36vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 300;
+  }
 }
 @media only screen and (min-width: 767px) {
-  .item01 {
+  .item01,
+  .item02 {
     font-size: 5em;
   }
   .item02 {
-    font-size: 5em;
     width: 20vw;
   }
   a:hover {
@@ -110,7 +156,33 @@ export default {
   p:hover {
     background: #000;
   }
-
+  /* ロード時に要素を隠す */
+  .blind {
+    position: absolute;
+    background-color: rgb(255, 255, 255);
+    width: 100%;
+    height: 100%;
+    z-index: 200;
+  }
+  /* 要素の調整 */
+  .wrapper,
+  .modal-appear {
+    position: absolute;
+    z-index: 1;
+  }
+  .wrapper {
+    margin-top: 16vh 
+  }
+  /* ローディングのアニメーション */
+  .loader {
+    position: absolute;
+    margin-left: 42vw;
+    margin-top: 36vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 300;
+  }
 }
 a {
   text-align: center;
@@ -128,6 +200,10 @@ p:hover  {
   transition: color 2s;
   transition: background 1.2s;
 }
+img {
+    width: 1px;
+    height: 1px; 
+  }
 
 /* ボタンのアニメーション */
 .button-wrapper {

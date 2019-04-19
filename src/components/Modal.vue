@@ -135,6 +135,9 @@ export default {
   .button {
     margin: 0 auto;
   }
+  .button-wrapper {
+    display: block;
+  }
 }
 p {
   text-align: center;
@@ -149,14 +152,11 @@ p:hover  {
 
 // ボタン
 .button-wrapper {
+  position relative
 	display: inline-block;
-	padding: 40px;
+	padding: 8vw;
 }
 
-.button-wrapper {
-	display: block;
-  position: relative;
-}
 .button {
   font-family: 'Marcellus SC';
   font-size: 2em;
