@@ -249,6 +249,8 @@ img {
   /* 要素の調整 */
   .wrapper,
   .modal-appear {
+    margin-left: 2vw;
+    margin-top: 2vh;
     position: absolute;
     z-index: 1;
   }
