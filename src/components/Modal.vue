@@ -117,6 +117,11 @@ export default {
     margin-left: auto;
     margin-right: auto;
   }
+  .button-wrapper {
+    position relative
+    display: inline-block;
+    padding: 8vw;
+  }
 }
 @media only screen and (min-width: 768px), print { 
   p {
@@ -152,11 +157,10 @@ p:hover  {
 
 // ボタン
 .button-wrapper {
-  position relative
-	display: inline-block;
-	padding: 8vw;
+  // position relative
+  // display: inline-block;
+  padding: 2vw;
 }
-
 .button {
   font-family: 'Marcellus SC';
   font-size: 2em;
