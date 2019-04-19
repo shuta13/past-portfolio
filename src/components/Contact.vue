@@ -70,8 +70,11 @@ export default {
     loaded() {
       setTimeout(() => {
         this.isLoading = !this.isLoading;
-        this.motionContinue = !this.motionContinue;
+        TweenMax.to('.blind', 1.2, {opacity: 0});
       }, 1800)
+      setTimeout(() => {
+        this.motionContinue = !this.motionContinue;
+      }, 3000)
     }
   },
   mounted: function () {

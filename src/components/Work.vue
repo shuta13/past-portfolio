@@ -61,6 +61,7 @@
 </template>
 
 <script>
+import TweenMax from 'greensock';
 import DotLoader from 'vue-spinner/src/DotLoader';
 import { setTimeout } from 'timers';
 
@@ -100,8 +101,11 @@ export default {
     loaded() {
       setTimeout(() => {
         this.isLoading = !this.isLoading;
-        this.motionContinue = !this.motionContinue;
+        TweenMax.to('.blind', 1.6, {opacity: 0});
       }, 3000)
+      setTimeout(() => {
+        this.motionContinue = !this.motionContinue;
+      }, 4600)
     }
   },
   mounted: function () {
