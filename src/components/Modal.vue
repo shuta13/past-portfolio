@@ -161,9 +161,8 @@ p:hover  {
 
 // ボタン
 .button-wrapper {
-  // position relative
-  // display: inline-block;
-  padding: 12vw;
+  // ここいじるとmenuのレイアウトずれる
+  padding: 3vw;
 }
 .button {
   font-family: 'Marcellus SC';
