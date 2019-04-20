@@ -133,7 +133,7 @@ body::-webkit-scrollbar {
     text-decoration: none;
     outline: none;
     color: #000;
-    font-size: 6em;
+    font-size: 6vw;
     font-family: 'Marcellus SC';
     background: #fff;
   }
@@ -162,7 +162,7 @@ p:hover  {
 // ボタン
 .button-wrapper {
   // ここいじるとmenuのレイアウトずれる
-  padding: 4.2vw;
+  padding: auto 4vw;
 }
 .button {
   font-family: 'Marcellus SC';

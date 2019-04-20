@@ -148,7 +148,7 @@ export default {
 @media only screen and (min-width: 767px) {
   .item01,
   .item02 {
-    font-size: 5em;
+    font-size: 6vw;
   }
   .item02 {
     width: 20vw;
