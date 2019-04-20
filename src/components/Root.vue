@@ -110,6 +110,10 @@ export default {
 </script>
 
 <style scoped>
+html::-webkit-scrollbar, 
+body::-webkit-scrollbar {
+  display: none;
+}
 #logo {
   position: relative;
   width: 100%;

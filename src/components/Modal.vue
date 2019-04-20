@@ -43,6 +43,10 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
+html::-webkit-scrollbar, 
+body::-webkit-scrollbar {
+  display: none;
+}
 // モーダル
 .modal {
   &.modal-overlay {

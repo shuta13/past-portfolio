@@ -119,6 +119,10 @@ export default {
 
 
 <style scoped>
+html::-webkit-scrollbar, 
+body::-webkit-scrollbar {
+  display: none;
+}
 a {
   position: relative;
   font-family: 'Tangerine';
@@ -158,9 +162,6 @@ img {
   p {
     font-size: 200%;
   }
-  .piapro-song {
-    font-size: 1vw;
-  }
   img {
     width: auto;
     height: 90px;
@@ -169,16 +170,15 @@ img {
     width: 120px;
     height: 90px;
   }
-  .wrapper {
-    position: relative;
-    margin-top: 8vh;
-  }
   iframe {
     width: 80%;
     height: 40%;
   }
   .item {
-    margin: 2vh auto;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1vh;
     height: 78vh;
     width: 72vw;
     /* overflow: scroll; */
@@ -201,8 +201,8 @@ img {
     z-index: 1;
   }
   .wrapper {
+    display: block;
     margin-top: 16vh;
-    margin-right: 16vw;
   }
   /* ローディングのアニメーション */
   .loader {
@@ -213,6 +213,9 @@ img {
     justify-content: center;
     align-items: center;
     z-index: 300;
+  }
+  .loader::-webkit-scrollbar {
+    display: none;
   }
 }
 @media only screen and (min-width: 768px), print {
@@ -296,7 +299,7 @@ img {
 	/* padding: 20px; */
 }
 .button {
-  font-size: 2em;
+  font-size: 1.6em;
   font-family: 'Marcellus SC';
 	background: #fff;
 	border: none;
@@ -305,8 +308,6 @@ img {
 	display: block;
 	overflow: hidden;
 	transition: all .35s ease-in-out .35s;
-  margin: 0 auto;
-  width: 150px;
   position: relative;
 }
 .dark-button .button,
