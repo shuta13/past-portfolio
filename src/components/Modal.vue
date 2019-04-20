@@ -159,7 +159,7 @@ p:hover  {
 .button-wrapper {
   // position relative
   // display: inline-block;
-  padding: 2vw;
+  padding: 12vw;
 }
 .button {
   font-family: 'Marcellus SC';

@@ -142,10 +142,10 @@ img {
   margin: 4px;
 }
 .flex{
-    display: -webkit-flex;
-    display: -moz-flex;
-    display: -ms-flex;
-    display: -o-flex;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
 }
 @media only screen and (max-width: 767px) {
   .flex {
@@ -201,7 +201,8 @@ img {
     z-index: 1;
   }
   .wrapper {
-    margin-top: 16vh 
+    margin-top: 16vh;
+    margin-right: 16vw;
   }
   /* ローディングのアニメーション */
   .loader {
