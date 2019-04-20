@@ -130,10 +130,6 @@ a {
   text-decoration: none;
   color: #6666cc;
 }
-.piapro-song {
-  color: #66CCCC;
-  font-size: 2vw;
-}
 p {
   position: relative;
   font-family: 'Tangerine';
@@ -227,6 +223,9 @@ img {
   }
   p {
     font-size: 2.6vw;
+  }
+  span {
+    font-size: 140%;
   }
   img {
     width: 40%
