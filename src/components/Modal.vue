@@ -142,7 +142,7 @@ body::-webkit-scrollbar {
     background: #000;
   }
   .button {
-    margin: 0 auto;
+    margin: 2vh auto;
   }
   .button-wrapper {
     display: block;
