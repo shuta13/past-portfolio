@@ -77,8 +77,8 @@ export default {
       height: window.innerHeight - (window.innerHeight/3),
       isLoading: true,
       motionContinue: true,
-      color: `#000000`,
-      size: `200px`,
+      color: `rgba(0, 0, 0, 0.5)`,
+      size: `240px`,
       timeHover: 0.2
     }
   },
@@ -101,7 +101,7 @@ export default {
     loaded() {
       setTimeout(() => {
         this.isLoading = !this.isLoading;
-        TweenMax.to('.blind', 1.6, {opacity: 0});
+        TweenMax.to('.blind', 0.4, {opacity: 0});
       }, 3000)
       setTimeout(() => {
         this.motionContinue = !this.motionContinue;

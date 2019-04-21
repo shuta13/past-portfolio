@@ -25,6 +25,7 @@
 </template>
 
 <script>
+import TweenMax from 'greensock';
 import DotLoader from 'vue-spinner/src/DotLoader';
 import { setTimeout } from 'timers';
 
@@ -38,8 +39,8 @@ export default {
 
       isLoading: true,
       motionContinue: true,
-      color: `#000000`,
-      size: `200px`
+      color: `rgba(0, 0, 0, 0.5)`,
+      size: `240px`
     }
   },
   computed: {
