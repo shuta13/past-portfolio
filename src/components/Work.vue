@@ -16,10 +16,10 @@
     <div class="wrapper">
       <div class="wrapper-box">
         <div class="flex box" :style="windowSize">
-          <div class="item01" @mouseover="mouseover01" @mouseleave="mouseleave">
+          <div class="item01" @mouseover="mouseover01" @mouseleave="mouseleave01">
             <span>coding</span>
             <p>
-              Developing and Deployed products
+              Developing & Deployed products
             </p>
             <a href="https://github.com/shuta13">GitHub</a>
             <p>
@@ -27,17 +27,17 @@
             </p>
             <a href="https://stable-study.herokuapp.com">stable-study</a>
           </div>
-          <div class="item02" @mouseover="mouseover02">
+          <div class="item02" @mouseover="mouseover02" @mouseleave="mouseleave02">
             <span>art</span>
             <p>
               Creative coding by Processing
               <img src="../assets/frame-0725.jpg">
               <img src="../assets/frame-0006.jpg"><br>
-              Logo Design by Abobe Photoshop<br>
+              Logo Design by<br>Abobe Photoshop<br>
               <img class="photo-logo" src="../assets/addict.jpg">
             </p>
           </div>
-          <div class="item03" @mouseover="mouseover03">
+          <div class="item03" @mouseover="mouseover03" @mouseleave="mouseleave03">
             <span>illustration</span>
             <p>
               Illustration of vocaloid, scene
@@ -46,7 +46,7 @@
             </p>
             <a href="https://www.pixiv.net/member.php?id=19834475">Pixiv</a>
           </div>
-          <div class="item04" @mouseover="mouseover04">
+          <div class="item04" @mouseover="mouseover04" @mouseleave="mouseleave04">
             <span>music</span>
             <p>
               EDM, Pops
@@ -79,7 +79,7 @@ export default {
       motionContinue: true,
       color: `#000000`,
       size: `200px`,
-      timeHover: 0.8
+      timeHover: 0.2
     }
   },
   computed: {
@@ -108,38 +108,62 @@ export default {
       }, 4600)
     },
     mouseover01() {
-      TweenMax.to('.item01', this.timeHover, {
-        boxShadow: "0 6px 10px rgba(0, 0, 0, 0.22)",
-        zIndex: 100,
-        width: "24vw",
-      });
+      if (window.innerWidth > 767) {
+        TweenMax.to('.item01', this.timeHover, {
+          boxShadow: "0 6px 10px rgba(0, 0, 0, 0.22)",
+          zIndex: 100,
+          width: "26%",
+          padding: "8px 8px"
+        });
+      }
     },
     mouseover02() {
-      TweenMax.to('.item02', this.timeHover, {
-        boxShadow: "0 6px 10px rgba(0, 0, 0, 0.22)",
-        zIndex: 100,
-        width: "24vw",
-      });
+      if (window.innerWidth > 767) {
+        TweenMax.to('.item02', this.timeHover, {
+          boxShadow: "0 6px 10px rgba(0, 0, 0, 0.22)",
+          zIndex: 100,
+          width: "26.4%",
+        });
+      }
     },
     mouseover03() {
-      TweenMax.to('.item03', this.timeHover, {
-        boxShadow: "0 6px 10px rgba(0, 0, 0, 0.22)",
-        zIndex: 100,
-        width: "24vw",
-      });
+      if (window.innerWidth > 767) {
+        TweenMax.to('.item03', this.timeHover, {
+          boxShadow: "0 6px 10px rgba(0, 0, 0, 0.22)",
+          zIndex: 100,
+          width: "26%",
+        });
+      }
     },
     mouseover04() {
-      TweenMax.to('.item04', this.timeHover, {
-        boxShadow: "0 6px 10px rgba(0, 0, 0, 0.22)",
-        zIndex: 100,
-        width: "24vw",
-      });
+      if (window.innerWidth > 767) {
+        TweenMax.to('.item04', this.timeHover, {
+          boxShadow: "0 6px 10px rgba(0, 0, 0, 0.22)",
+          zIndex: 100,
+          width: "26%",
+        });
+      }
     },
-    mouseleave() {
-      TweenMaxd.to('.item01', 1, {
+    mouseleave01() {
+      TweenMax.to('.item01', this.timeHover, {
         clearProps: "all"
       });
-    }
+    },
+    mouseleave02() {
+      TweenMax.to('.item02', this.timeHover, {
+        clearProps: "all"
+      });
+    },
+    mouseleave03() {
+      TweenMax.to('.item03', this.timeHover, {
+        clearProps: "all"
+      });
+    },
+    mouseleave04() {
+      TweenMax.to('.item04', this.timeHover, {
+        clearProps: "all"
+      });
+    },
   },
   mounted: function () {
     window.addEventListener('resize', this.handleResize)
@@ -280,6 +304,7 @@ img {
   .item02,
   .item03,
   .item04 {
+    z-index: 1;
     margin-right: 4px;
     height: 64vh;
     width: 24vw;
