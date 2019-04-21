@@ -12,10 +12,11 @@
     </div>
     <dot-loader class="loader" :loading="isLoading" :color="color" :size="size"></dot-loader>
     <div class="blind" v-if="motionContinue"></div>
+    <img @load="loaded" src="https://www.w3schools.com/w3css/img_lights.jpg" style="opacity: 0; width: 1px; height: 1px;">
     <div class="wrapper">
       <div class="wrapper-box">
         <div class="flex box" :style="windowSize">
-          <div class="item">
+          <div class="item01" @mouseover="mouseover01" @mouseleave="mouseleave">
             <span>coding</span>
             <p>
               Developing and Deployed products
@@ -26,7 +27,7 @@
             </p>
             <a href="https://stable-study.herokuapp.com">stable-study</a>
           </div>
-          <div class="item">
+          <div class="item02" @mouseover="mouseover02">
             <span>art</span>
             <p>
               Creative coding by Processing
@@ -36,7 +37,7 @@
               <img class="photo-logo" src="../assets/addict.jpg">
             </p>
           </div>
-          <div class="item">
+          <div class="item03" @mouseover="mouseover03">
             <span>illustration</span>
             <p>
               Illustration of vocaloid, scene
@@ -45,12 +46,12 @@
             </p>
             <a href="https://www.pixiv.net/member.php?id=19834475">Pixiv</a>
           </div>
-          <div class="item">
+          <div class="item04" @mouseover="mouseover04">
             <span>music</span>
             <p>
               EDM, Pops
             </p>
-            <iframe @load="loaded" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/607702572&color=%23a0879a&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
+            <iframe scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/607702572&color=%23a0879a&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
             <p></p>
             <a href="https://soundcloud.com/user-858183512">Soundcloud</a><br>
           </div>
@@ -77,21 +78,20 @@ export default {
       isLoading: true,
       motionContinue: true,
       color: `#000000`,
-      size: `200px`
+      size: `200px`,
+      timeHover: 0.8
     }
   },
   computed: {
     windowSize() {
       return {
         width: `${this.width}px`,
-        height: `${this.height}px`
+        height: `${this.height}px`,
       }
     }
   },
   methods: {
-    handleResize: function() {
-      // resizeのたびにこいつが発火するので、ここでやりたいことをやる
-
+    handleResize() {
       this.width = window.innerWidth;
       this.height = window.innerHeight;
     },
@@ -106,6 +106,39 @@ export default {
       setTimeout(() => {
         this.motionContinue = !this.motionContinue;
       }, 4600)
+    },
+    mouseover01() {
+      TweenMax.to('.item01', this.timeHover, {
+        boxShadow: "0 6px 10px rgba(0, 0, 0, 0.22)",
+        zIndex: 100,
+        width: "24vw",
+      });
+    },
+    mouseover02() {
+      TweenMax.to('.item02', this.timeHover, {
+        boxShadow: "0 6px 10px rgba(0, 0, 0, 0.22)",
+        zIndex: 100,
+        width: "24vw",
+      });
+    },
+    mouseover03() {
+      TweenMax.to('.item03', this.timeHover, {
+        boxShadow: "0 6px 10px rgba(0, 0, 0, 0.22)",
+        zIndex: 100,
+        width: "24vw",
+      });
+    },
+    mouseover04() {
+      TweenMax.to('.item04', this.timeHover, {
+        boxShadow: "0 6px 10px rgba(0, 0, 0, 0.22)",
+        zIndex: 100,
+        width: "24vw",
+      });
+    },
+    mouseleave() {
+      TweenMaxd.to('.item01', 1, {
+        clearProps: "all"
+      });
     }
   },
   mounted: function () {
@@ -170,7 +203,10 @@ img {
     width: 80%;
     height: 40%;
   }
-  .item {
+  .item01,
+  .item02,
+  .item03,
+  .item04 {
     position: relative;
     margin-left: auto;
     margin-right: auto;
@@ -179,7 +215,10 @@ img {
     width: 72vw;
     /* overflow: scroll; */
   }
-  .item span {
+  .item01 span,
+  .item02 span,
+  .item03 span,
+  .item04 span {
     font-size: 240%; 
   }
   /* ロード時に要素を隠す */
@@ -237,12 +276,18 @@ img {
   .photo-logo {
     width: 50%;
   }
-  .item {
-    margin: 2vh auto;
+  .item01,
+  .item02,
+  .item03,
+  .item04 {
+    margin-right: 4px;
     height: 64vh;
     width: 24vw;
   }
-  .item span {
+  .item01 span,
+  .item02 span,
+  .item03 span,
+  .item04 span {
     font-size: 3.2vw; 
   }
   /* ロード時に要素を隠す */
@@ -278,14 +323,27 @@ img {
 .work-item {
   font-family: 'Marcellus SC';
 }
-.item{
+
+/* ホバー前の状態 */
+.item01,
+.item02,
+.item03,
+.item04 {
+  position: relative;
   border-radius: 4px;
   text-align: center;
-  padding: 0.5em 1em;
+  padding: 0.5vw 1vh;
   background: white;
-  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
+  border-style: solid;
+  border-color: rgba(0, 0, 0, 0.12);
+  border-width: 1.2px;
+  z-index: 1;
+  /* box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22); */
 }
-.item span {
+.item01 span,
+.item02 span,
+.item03 span,
+.item04 span {
   text-align: center;
   font-family: 'Marcellus SC';
   color: #BBB;

@@ -162,7 +162,7 @@ p:hover  {
 // ボタン
 .button-wrapper {
   // ここいじるとmenuのレイアウトずれる
-  padding: auto 4vw;
+  padding: 3.2vh 1.8vw;
 }
 .button {
   font-family: 'Marcellus SC';
