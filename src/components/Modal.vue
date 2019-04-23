@@ -64,7 +64,7 @@ body::-webkit-scrollbar {
   // ざっくりレスポンシブ対応
   @media only screen and (max-width: 767px) {
     &-content {
-      padding: 12vh 6vw;
+      padding: 12vh 12vw;
     }
     &-window {
       background: #000;
@@ -108,7 +108,7 @@ body::-webkit-scrollbar {
     text-decoration: none;
     outline: none;
     color: #fff;
-    font-size: 4em;
+    font-size: 18vw;
     font-family: 'Marcellus SC';
     background: #000;
   }
@@ -120,11 +120,24 @@ body::-webkit-scrollbar {
     vertical-align: middle;
     margin-left: auto;
     margin-right: auto;
+    
+    font-family: 'Marcellus SC';
+    font-size: 6vw;
+    background: #fff;
+    border: none;
+    padding: 2px;
+    cursor: pointer;
+    display: block;
+    position: relative;
+    overflow: hidden;
+    transition: all .35s ease-in-out .35s;
+    height: 8vh;
+    width: 32vw;
+    margin-bottom: 2vh;
   }
   .button-wrapper {
-    position relative
+    position: relative;
     display: inline-block;
-    padding: 8vw;
   }
 }
 @media only screen and (min-width: 768px), print { 
@@ -143,9 +156,21 @@ body::-webkit-scrollbar {
   }
   .button {
     margin: 2vh auto;
+    font-family: 'Marcellus SC';
+    font-size: 2em;
+    background: #fff;
+    border: none;
+    padding: 2px;
+    cursor: pointer;
+    display: block;
+    position: relative;
+    overflow: hidden;
+    transition: all .35s ease-in-out .35s;
+    width: 150px;
   }
   .button-wrapper {
     display: block;
+    padding: 3.2vh 1.8vw;
   }
 }
 p {
@@ -162,20 +187,10 @@ p:hover  {
 // ボタン
 .button-wrapper {
   // ここいじるとmenuのレイアウトずれる
-  padding: 3.2vh 1.8vw;
+  
 }
 .button {
-  font-family: 'Marcellus SC';
-  font-size: 2em;
-	background: #fff;
-	border: none;
-	padding: 2px;
-	cursor: pointer;
-	display: block;
-	position: relative;
-	overflow: hidden;
-	transition: all .35s ease-in-out .35s;
-  width: 150px;
+  
 }
 .dark-button .button,
 .dark-button .button span {

@@ -420,13 +420,14 @@ img {
     padding: 2vh 4vw;
     background: #fff;
     z-index: 100;
-    position: relative;
+    /* position: relative; */
     transition: all .35s ease-in-out .35s;
     text-align: center;
   }
   .button-wrapper {
-    position: absolute;
-    margin-left: 40vw;
+    /* position: absolute; */
+    margin-left: 36vw;
+    margin-right: 36vw;
     margin-top: 2vh;
   }
 }
