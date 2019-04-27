@@ -30,9 +30,10 @@
           <div class="item02" @mouseover="mouseover02" @mouseleave="mouseleave02">
             <span>art</span>
             <p>
-              Creative coding by Processing
-              <img src="../assets/frame-0725.jpg">
-              <img src="../assets/frame-0006.jpg"><br>
+              Creative coding by Processing<br>
+            </p>
+              <a href="https://twitter.com/i/moments/1122156330385416192?ref_src=twsrc%5Etfw">Moment</a><br>
+            <p>
               Logo Design by<br>Abobe Photoshop<br>
               <img class="photo-logo" src="../assets/addict.jpg">
             </p>
