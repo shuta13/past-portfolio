@@ -1,5 +1,5 @@
 <template>
-  <div id="work">
+  <div id="works">
     <div class="modal-appear">
       <div class="light-button button-wrapper">
         <div class="button flex" @click="handleClickToHome">
@@ -67,7 +67,7 @@ import DotLoader from 'vue-spinner/src/DotLoader';
 import { setTimeout } from 'timers';
 
 export default {
-  name: 'work',
+  name: 'works',
   components: {
     DotLoader
   },

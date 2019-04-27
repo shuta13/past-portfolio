@@ -6,7 +6,7 @@
           <div class="modal-content">
             <div id="link">
               <div id="link-item">
-                <p @click="handleClickToWork" @mouseover:style="hoverEffect">work</p>
+                <p @click="handleClickToWorks" @mouseover:style="hoverEffect">works</p>
                 <p @click="handleClickToContact">contact</p>
               </div>
             </div>
@@ -26,8 +26,8 @@
 export default {
   name: 'modal',
   methods: {
-    handleClickToWork() {
-      this.$router.push({ path: '/work' });
+    handleClickToWorks() {
+      this.$router.push({ path: '/works' });
     },
     handleClickToContact() {
       this.$router.push({ path: './contact' });
